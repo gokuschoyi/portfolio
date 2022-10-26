@@ -1,0 +1,74 @@
+.navigationBar {
+  padding: 1rem;
+  background-color: transparent;
+}
+
+.nav-item {
+  padding: 0 2rem;
+  margin: 1rem 1rem 15px 10px;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: #f9f7e8;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item:hover {
+  background-color: #ce7182;
+  color: black;
+  transition: 0.5s;
+  scale: 1.1;
+  box-shadow: #8a8d92 0px 0px 10px;
+}
+
+.nav-link {
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#navbarSupportedContent {
+  align-items: center;
+}
+
+.offcanvas {
+  background-color: transparent;
+}
+.offcanvas.offcanvas-end {
+  border-left: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .nav-link {
+    color: rgb(255, 255, 255);
+  }
+  .nav-item {
+    background-color: #181111;
+    opacity: 1;
+  }
+  .offcanvas {
+    background-color: transparent;
+    height: fit-content;
+  }
+  .offcanvas.offcanvas-end {
+    border-left: 0;
+    top: 25%;
+  }
+
+  .offcanvas-body {
+    opacity: 0.5;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.offcanvas-backdrop {
+  background-color: transparent;
+}
+
+.menuLogo {
+  font-size: 30px;
+}

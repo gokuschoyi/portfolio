@@ -17,19 +17,19 @@ const Navbar = () => {
                         <div className="offcanvas-body  d-flex justify-content-center">
                             <ul className="navbar-nav justify-content-center flex-grow-1">
                                 <li className="nav-item">
-                                    <a className="nav-link " aria-current="page" href="!">Home</a>
+                                    <a className="nav-link " href="#hero-name">Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#products">About</a>
+                                    <a className="nav-link" href="#about-data">About</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="!">Resume</a>
+                                    <a className="nav-link" href="#resume">Resume</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#contactUsSection">Portfolio</a>
+                                    <a className="nav-link" href="#portfolio">Portfolio</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#contactUsSection">Contact</a>
+                                    <a className="nav-link" href="#contact">Contact</a>
                                 </li>
                             </ul>
                         </div>

@@ -1,7 +1,18 @@
+body {
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+}
+
 .App {
   text-align: center;
-  
+
   min-height:300vh;
+  height: -webkit-fill-available;
   font-family: 'Roboto Mono', monospace, 'Bungee', cursive, 'Press Start 2P', cursive;
 }
 

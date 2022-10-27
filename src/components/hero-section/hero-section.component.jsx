@@ -47,7 +47,7 @@ const Hero = () => {
         window.addEventListener('scroll', () => {
             const scroll = window.scrollY;
             const scrollPosition = Math.abs(scroll / 100);
-            if (scroll % 100 === 0) { console.log(scrollPosition, scroll) }
+            if (scroll % 100 === 0) { console.log({scrollPosition, scroll}) }
             /* console.log(scroll); */
             if (threshold > scroll) {
                 tower[0].style.transform = `scale(${1 + scroll * 0.00015})`;
@@ -103,13 +103,13 @@ const Hero = () => {
 
     return (
         <section id="hero" className="hero d-flex flex-column justify-content-center align-items-center">
-            <div className='banner-wrapper'>
+            <div className='banner-wrapper' >
                 <img src={Sky} alt='sky' className='sky'></img>
                 <img src={Foreground} alt='foreground' className='foreground'></img>
                 <img src={Tower} alt='tower' className='tower'></img>
             </div>
-            <div className="hero-container" data-aos="fade-in">
-                <h1>Gokul S Choyi</h1>
+            <div className="hero-container"  >
+                <h1 id='hero-name'>Gokul S Choyi</h1>
                 <p>I'm <span ref={el} /></p>
             </div>
         </section>

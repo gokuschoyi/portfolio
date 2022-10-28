@@ -2,6 +2,12 @@ import React from 'react'
 import './navbar.styles.css'
 import {CgMenuLeft} from 'react-icons/cg'
 const Navbar = () => {
+    const getToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
     return (
         <>
             <nav className="navbar navbar-expand-lg fixed-top navigationBar">
@@ -16,8 +22,8 @@ const Navbar = () => {
                         </div>
                         <div className="offcanvas-body  d-flex justify-content-center">
                             <ul className="navbar-nav justify-content-center flex-grow-1">
-                                <li className="nav-item">
-                                    <a className="nav-link " href="#hero-name">Home</a>
+                                <li className="nav-item" onClick={getToTop}>
+                                    <a className="nav-link" href="#hero">Home</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#about-data">About</a>
@@ -26,7 +32,7 @@ const Navbar = () => {
                                     <a className="nav-link" href="#resume">Resume</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#portfolio">Portfolio</a>
+                                    <a className="nav-link" href="#projects">Portfolio</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#contact">Contact</a>

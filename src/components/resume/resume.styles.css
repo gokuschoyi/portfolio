@@ -1,6 +1,6 @@
 .resume-section {
-  height:auto;
-  
+  height: auto;
+
   margin-top: 10vh;
   opacity: 0;
   transition: all 1s ease;
@@ -11,9 +11,9 @@
   z-index: 50;
   padding-top: 10vh;
 }
-.resume-title {
+/* .resume-title {
   padding-top: 10vh;
-}
+} */
 
 .resume-reveal {
   opacity: 1;
@@ -23,7 +23,7 @@
 .resume-banner {
   width: 100%;
   position: absolute;
-  
+
   overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,7 +48,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100%; 
+  height: 100%;
   width: 100%;
 }
 .resume-center {
@@ -60,7 +60,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100%; 
+  height: 100%;
   width: 100%;
 }
 
@@ -73,11 +73,70 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100%; 
+  height: 100%;
   width: 100%;
 }
 
-.blur{
-    backdrop-filter:blur(8px);
-    background-color: rgba(255, 255, 255, 0.5);
+.blur {
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.5);
+  /* background-color:white */
+}
+
+.resume-content .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #050d18;
+}
+
+.resume-content .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #1f5297;
+  position: relative;
+}
+
+.resume-content .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
+  margin-bottom: 10px;
+}
+
+.resume-content .resume-item h5 {
+  font-size: 16px;
+  background: #e4edf9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume-content .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume-content .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume-content .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume-content .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #1f5297;
 }

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import './resume.styles.css'
-import ResumeForeground from '../../assets/resume_foreground.png'
-import ResumeCenter from '../../assets/resume_center.png'
-import ResumeSky from '../../assets/resume_sky.png'
+import ResumeForeground from '../../assets/r_me.png'
+import ResumeCenter from '../../assets/r_hand.png'
+import ResumeSky from '../../assets/r_bg.png'
 const Resume = () => {
   useEffect(() => {
     const resumeSection = document.getElementsByClassName('resume-section');
@@ -21,13 +21,21 @@ const Resume = () => {
     const sky = document.getElementsByClassName('resume-sky');
     const center = document.getElementsByClassName('resume-center');
     const foreground = document.getElementsByClassName('resume-foreground');
+    const resumeContent = document.getElementsByClassName('resume-content');
+    var height = resumeContent[0].clientHeight;
+
+    window.addEventListener('resize', () => {
+      height = resumeContent[0].clientHeight;
+      /* console.log(height, window.scrollY, 2900+height); */
+    });
+
     window.addEventListener('scroll', () => {
       const scroll = window.scrollY;
-      if (scroll > 2900) {
-        console.log("true");
-        sky[0].style.transform = `scale(${1 + scroll * 0.00015})`;
-        center[0].style.transform = `scale(${1 + scroll * 0.00015})`;
-        foreground[0].style.transform = `scale(${1 + scroll * 0.00015})`;
+      if (scroll > 2900 && scroll < 2900 + height) {
+        
+        sky[0].style.transform = `scale(${1 + scroll * 0.00005})`;
+        center[0].style.transform = `scale(${1 + scroll * 0.00008})`;
+        foreground[0].style.transform = `scale(${1 + scroll * 0.00013})`;
       }
     });
   })
@@ -42,9 +50,9 @@ const Resume = () => {
       </div>
       <div className='resume-content'>
         <div className="section-title">
-          <div className='row justify-content-center'>
+          <div className='row justify-content-center m-3'>
             <div className='col-12 col-sm-12 col-md-8 col-lg-8 blur'>
-              <h2>Resume</h2>
+              <h2>Experience on Hand</h2>
             </div>
             <div className='col-12 col-sm-12 col-md-8 col-lg-8 blur' style={{ textAlign: 'justify', padding: '25px' }}>
               <p>Motivated individual possessing excellent leadership and planning abilities.
@@ -59,9 +67,9 @@ const Resume = () => {
             </div>
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center m-3">
           <div className="col-sm-12 col-md-4 col-lg-4 blur" data-aos="fade-up">
-            <h3 className="resume-title">Sumary</h3>
+            <h3 className="resume-title" style={{ paddingBottom: '5vh' }}>Summary</h3>
             <div className="resume-item ">
               <h4>Gokul S Choyi</h4>
               <p style={{ textAlign: 'justify', padding: '25px' }}>

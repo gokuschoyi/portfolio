@@ -109,7 +109,7 @@ const Hero = () => {
                 <img src={Tower} alt='tower' className='tower'></img>
             </div>
             <div className="hero-container"  >
-                <h1 id='hero-name'>Gokul S Choyi</h1>
+                <h1 >Gokul S Choyi</h1>
                 <p>I'm <span ref={el} /></p>
             </div>
         </section>

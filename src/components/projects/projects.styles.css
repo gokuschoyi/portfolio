@@ -1,0 +1,67 @@
+.projects-section {
+  margin-top: 10vh;
+  transition: all 1s ease;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 120;
+  background-image: url("../../assets/bg_new.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.project-title {
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  color: aliceblue;
+  font-size: 40px;
+}
+
+
+
+.project {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.project-one {
+  margin-left: 350px;
+}
+
+.project-two {
+  margin-right: 350px;
+}
+
+.project-three {
+  margin-left: 350px;
+}
+.project-four {
+  margin-right: 350px;
+}
+
+.animate-projectOne {
+  margin-left: 0px;
+  opacity: 1;
+  transition: all 2s ease;
+}
+
+.animate-projectTwo {
+  margin-right:0px;
+  opacity: 1;
+  transition: all 2s ease;
+}
+
+.animate-projectThree {
+  margin-left: 0px;
+  opacity: 1;
+  transition: all 2s ease;
+}
+
+.animate-projectFour {
+  margin-right:0px;
+  opacity: 1;
+  transition: all 2s ease;
+}

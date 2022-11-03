@@ -26,6 +26,11 @@
   font-weight: 400;
   text-decoration: none;
 }
+.navIcons{
+  vertical-align:sub;
+  font-size: 20px;
+  margin-right:10px;
+}
 
 #navbarSupportedContent {
   align-items: center;
@@ -33,9 +38,11 @@
 
 .offcanvas {
   background-color: transparent;
+  border-radius: 15px;
 }
 .offcanvas.offcanvas-end {
   border-left: 0;
+  right:10px;
 }
 
 @media screen and (max-width: 992px) {
@@ -47,22 +54,22 @@
     opacity: 1;
   }
   .offcanvas {
-    background-color: transparent;
+    background-color: black;
+    backdrop-filter: blur(4px);
     height: fit-content;
+  }
+  .btn-color {
+    background-color: white;
   }
   .offcanvas.offcanvas-end {
     border-left: 0;
     top: 25%;
   }
-
-  .offcanvas-body {
-    opacity: 0.5;
-  }
 }
 
 .navbar-toggler {
   border: none;
-  background-color: transparent;
+  background-color: white;
 }
 
 .offcanvas-backdrop {

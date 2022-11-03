@@ -111,6 +111,7 @@ const Hero = () => {
             <div className="hero-container"  >
                 <h1 >Gokul S Choyi</h1>
                 <p>I'm <span ref={el} /></p>
+                <div className="arrow animated"></div>
             </div>
         </section>
 

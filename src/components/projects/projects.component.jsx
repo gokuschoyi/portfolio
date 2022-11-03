@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import './project.styles.css'
+import { Waypoint } from 'react-waypoint';
+import './projects.styles.css'
 import PP from '../../assets/project_placeholder.jpg';
 
 const Projects = () => {
@@ -14,53 +15,105 @@ const Projects = () => {
             /* console.log(height); */
         });
     })
+    const animateProjectOne = () => {
+        const project1 = document.getElementsByClassName('project-one');
+        project1[0].classList.add('animate-projectOne');
+    }
+    const animateProjectTwo = () => {
+        const project2 = document.getElementsByClassName('project-two');
+        project2[0].classList.add('animate-projectTwo');
+    }
+    const animateProjectThree = () => {
+        const project3 = document.getElementsByClassName('project-three');
+        project3[0].classList.add('animate-projectThree');
+    }
+    const animateProjectFour = () => {
+        const project4 = document.getElementsByClassName('project-four');
+        project4[0].classList.add('animate-projectFour');
+    }
+    const remove = () => {
+        console.log('remove');
+        const project1 = document.getElementsByClassName('project-one');
+        const project2 = document.getElementsByClassName('project-two');
+        const project3 = document.getElementsByClassName('project-three');
+        const project4 = document.getElementsByClassName('project-four');
+        project1[0].classList.remove('animate-projectOne');
+        project2[0].classList.remove('animate-projectTwo');
+        project3[0].classList.remove('animate-projectThree');
+        project4[0].classList.remove('animate-projectFour');
+    }
     return (
         <section id='projects' className='projects-section'>
-            <h2 className='project-title'>Projects</h2>
-            <div className='container'>
-                <div className='row  p-4'>
-                    <div className='col-6 d-flex justify-content-center'>
-                        <div className="card" style={{ width: '18rem' }}>
-                            <img src={PP} className="card-img-top" alt="..." />
+            <h2 className='project-title' style={{ color: 'black' }}>Projects</h2>
+            <div className='container-fluid'>
+                <Waypoint
+                    onEnter={animateProjectOne}>
+                    
+                </Waypoint>
+                <div className='row p-4 project project-one justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 1
+                            </div>
                             <div className="card-body">
-                                <p className="card-text">Project 1</p>
+                                <h5 className="card-title">Build Audience</h5>
                             </div>
-                            <div className="card-footer">
-                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='col-6 d-flex justify-content-center'>
-                        <div className="card" style={{ width: '18rem' }}>
-                            <img src={PP} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <p className="card-text">Project 2</p>
-                            </div>
-                            <div className="card-footer">
+                            <div className="card-footer text-muted">
                                 <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='row justify-content-center p-4'>
-                    <div className='col-6 d-flex justify-content-center'>
-                        <div className="card" style={{ width: '18rem' }}>
-                            <img src={PP} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <p className="card-text">Project 3</p>
+                <Waypoint
+                    onEnter={animateProjectTwo}>
+                </Waypoint>
+                <div className='row p-4 project project-two justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 2
                             </div>
-                            <div className="card-footer">
+                            <div className="card-body">
+                                <h5 className="card-title">Build Audience</h5>
+                            </div>
+                            <div className="card-footer text-muted">
                                 <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div className='col-6 d-flex justify-content-center'>
-                        <div className="card" style={{ width: '18rem' }}>
-                            <img src={PP} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <p className="card-text">Project 4</p>
+                </div>
+                <Waypoint
+                    onEnter={animateProjectThree}>
+                </Waypoint>
+                <div className='row p-4 project project-three justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 3
                             </div>
-                            <div className="card-footer">
+                            <div className="card-body">
+                                <h5 className="card-title">Build Audience</h5>
+                            </div>
+                            <div className="card-footer text-muted">
+                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Waypoint
+                    onEnter={animateProjectFour}>
+                </Waypoint>
+                <div className='row p-4 project project-four justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 4
+                            </div>
+                            <div className="card-body">
+                                <h5 className="card-title">Build Audience</h5>
+                            </div>
+                            <div className="card-footer text-muted">
                                 <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
                             </div>
                         </div>

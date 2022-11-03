@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Waypoint } from 'react-waypoint';
 import './resume.styles.css'
 import ResumeForeground from '../../assets/r_me.png'
 import ResumeCenter from '../../assets/r_hand.png'
@@ -8,7 +9,7 @@ const Resume = () => {
     const resumeSection = document.getElementsByClassName('resume-section');
     window.addEventListener('scroll', () => {
       const scrollPosition = window.scrollY;
-      if (scrollPosition > 2800) {
+      if (scrollPosition > 2400) {
         resumeSection[0].classList.add('resume-reveal');
       }
       else {
@@ -31,14 +32,37 @@ const Resume = () => {
 
     window.addEventListener('scroll', () => {
       const scroll = window.scrollY;
-      if (scroll > 2900 && scroll < 2900 + height) {
-        
+      if (scroll > 2400 && scroll < 2400 + height) {
+
         sky[0].style.transform = `scale(${1 + scroll * 0.00005})`;
         center[0].style.transform = `scale(${1 + scroll * 0.00008})`;
         foreground[0].style.transform = `scale(${1 + scroll * 0.00013})`;
       }
     });
   })
+
+  /* useEffect(() => {
+    let skilsContent = document.getElementsByClassName('skills-content');
+    if (skilsContent) {
+      var wp = new Waypoint({
+        element: skilsContent,
+        offset: '80%',
+        handler: function (direction) {
+          let progress = document.getElementsByClassName('.progress .progress-bar', true);
+          progress.forEach((el) => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%'
+          });
+        }
+      })
+    }
+  }) */
+
+  const skillsAnimate = () => {
+    let progress = document.getElementsByClassName('progress-bar');
+    for (let i = 0; i < progress.length; i++) {
+      progress[i].style.width = progress[i].getAttribute('aria-valuenow') + '%'
+    }
+  }
 
   return (
     <section id='resume' className='resume-section'>
@@ -55,32 +79,12 @@ const Resume = () => {
               <h2>Experience on Hand</h2>
             </div>
             <div className='col-12 col-sm-12 col-md-8 col-lg-8 blur' style={{ textAlign: 'justify', padding: '25px' }}>
-              <p>Motivated individual possessing excellent leadership and planning abilities.
-                I enjoy building relationships with people from diverse backgrounds and thrive in changing environments.
-                Successfully managed a team through proactive training and issue management during Industry Project.
-                Dependable Individual with experience in Agile environments with extensive understanding of Front-end development.
-                Industrious and motivated to work independently and as team player.
-                Complementing this is experience working at TekTorch and at La-Trobe University’s Industry Project, providing me with solid problem solving and analytics skills.
-                I have also become an emotionally intelligent leader.
-                Highly organized, proactive, and punctual with team-oriented mentality, driving me to get the best out of others and derive unique but effective solutions.
-                I am excited to apply my complementary skills and traits to the software engineering role.</p>
+              <p>Innovative and deadline-driven Software Engineer with experience designing and developing user-centered UI/UX from initial concept to final, polished deliverable.</p>
             </div>
           </div>
         </div>
         <div className="row justify-content-center m-3">
           <div className="col-sm-12 col-md-4 col-lg-4 blur" data-aos="fade-up">
-            <h3 className="resume-title" style={{ paddingBottom: '5vh' }}>Summary</h3>
-            <div className="resume-item ">
-              <h4>Gokul S Choyi</h4>
-              <p style={{ textAlign: 'justify', padding: '25px' }}>
-                Innovative and deadline-driven Software Engineer with experience designing and developing user-centered UI/UX from initial concept to final, polished deliverable.
-              </p>
-              <ul style={{ textAlign: 'left' }}>
-                <li>Canberra, ACT</li>
-                <li>0435 660 343</li>
-                <li>gokulsangamitrachoyi@gmail.com</li>
-              </ul>
-            </div>
             <h3 className="resume-title">Education</h3>
             <div className="resume-item">
               <h4>Bachelor of Information Technology</h4>
@@ -114,13 +118,13 @@ const Resume = () => {
             <h3 className="resume-title">Relevant Experience</h3>
             <div className="resume-item">
               <h4>Junior Software Developer</h4>
-              <h5>July, 2022 - Present</h5>
+              <h5>July, 2022 - October, 2022</h5>
               <p><em>TekTorch, Sydney </em></p>
               <ul style={{ textAlign: 'justify' }}>
                 <li>Voluntarily helping TekTorch to develop one its existing Projects for self-educational purpose</li>
                 <li>Redesigned an existing Web App ensuring that the client’s vision and requirements are met </li>
                 <li>Developed a responsive Mobile and Web App leveraging the following programming languages: Webflow, ReactJS, JavaScript and Bootstrap</li>
-                <li>Integrated the backend using Axios and React Redux for state manageme</li>
+                <li>Integrated the backend using Axios and React Redux for state management</li>
               </ul>
             </div>
             <div className="resume-item">
@@ -131,31 +135,8 @@ const Resume = () => {
                 <li>Designed and developed Front-end based on Client requirements.</li>
                 <li>Implemented the design in React, incorporating bootstrap for responsiveness across different platforms</li>
                 <li>Integrating the Backend to the Frontend.</li>
-                <li>Analyzed and Debugged code for efficient workflo</li>
+                <li>Analyzed and Debugged code for efficient workflow</li>
               </ul>
-            </div>
-            <div className="resume-item">
-              <h3 className="resume-title">Technical Skills</h3>
-              <div className='row'>
-                <div className='col'>
-                  <ul style={{ textAlign: 'justify' }}>
-                    <li>Javascript</li>
-                    <li>HTML/CSS</li>
-                    <li>ReactJS</li>
-                    <li>React Redux</li>
-                    <li>ExpressJs</li>
-                  </ul>
-                </div>
-                <div className='col'>
-                  <ul style={{ textAlign: 'justify' }}>
-                    <li>Bootstrap (v5.0)</li>
-                    <li>MySQL</li>
-                    <li>Spark/Scala</li>
-                    <li>PHP</li>
-                    <li>Webflow</li>
-                  </ul>
-                </div>
-              </div>
             </div>
             <div className="resume-item">
               <h3 className="resume-title">Interests</h3>
@@ -168,6 +149,93 @@ const Resume = () => {
                 <li>Gym</li>
                 <li>Trekking (rain or shine!) </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <Waypoint
+          onEnter={skillsAnimate}>
+        </Waypoint>
+        <div className='row justify-content-center m-3 '>
+          <div className="col-sm-12 col-md-8 col-lg-8 blur">
+            <h3 className="resume-title">Technical Skills</h3>
+          </div>
+        </div>
+        <div className="row skills m-3  justify-content-center">
+          <div className="col-sm-12 col-md-8 col-lg-4 blur p-3" data-aos="fade-up">
+            <div className="progress">
+              <span className="skill">JavaScript <i className="val">70%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={70} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">ReactJs <i className="val">75%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">React Redux <i className="val">80%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">RTK Query <i className="val">80%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">ExpressJs <i className="val">80%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">HTML <i className="val">75%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">CSS <i className="val">60%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={60} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+
+          </div>
+          <div className="col-sm-12 col-md-8 col-lg-4 blur p-3" data-aos="fade-up" data-aos-delay={100}>
+            <div className="progress">
+              <span className="skill">MongoDb <i className="val">80%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">Firebase <i className="val">65%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={65} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">Bootstrap (v5.0) <i className="val">75%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">Webflow <i className="val">80%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+              </div>
+            </div>
+            <div className="progress">
+              <span className="skill">Photoshop/Lightroom <i className="val">80%</i></span>
+              <div className="progress-bar-wrap">
+                <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+              </div>
             </div>
           </div>
         </div>

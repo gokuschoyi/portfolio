@@ -9,11 +9,12 @@ const Test = () => {
 
     useEffect(() => {
         const threshold = window.innerHeight;
+        console.log(window.innerHeight-300);
         let aim = document.getElementById('image'), room, overflow;
         let aim2 = document.getElementById('image2'), room2;
 
         room = window.innerHeight;
-        overflow = 1900;
+        overflow = 1500;
         console.log(overflow);
 
         room2 = window.innerHeight;
@@ -38,7 +39,7 @@ const Test = () => {
 
         function setEdge() {
             room = window.innerHeight;
-            overflow = 1900;
+            overflow = 1500;
 
             aim.style.setProperty('--maximum', room - aim.height + 'px');
             aim2.style.setProperty('--maximum', room2 - aim2.height + 'px');

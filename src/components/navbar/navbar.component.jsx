@@ -5,7 +5,7 @@ import {AiOutlineHome} from 'react-icons/ai'
 import {BsPerson} from 'react-icons/bs'
 import {AiOutlineFile} from 'react-icons/ai'
 import {BiBookContent} from 'react-icons/bi'
-import {FiPhoneOutgoing} from 'react-icons/fi'
+import {BiPhone} from 'react-icons/bi'
 const Navbar = () => {
     const getToTop = () => {
         window.scrollTo({
@@ -40,7 +40,7 @@ const Navbar = () => {
                                     <a className="nav-link" href="#projects"><BiBookContent className='navIcons'/><span>Portfolio</span></a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#contact"><FiPhoneOutgoing className='navIcons'/><span>Contact</span></a>
+                                    <a className="nav-link" href="#contact"><BiPhone className='navIcons'/><span>Contact</span></a>
                                 </li>
                             </ul>
                         </div>

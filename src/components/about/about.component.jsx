@@ -63,7 +63,7 @@ const Test = () => {
                         </div>
                         <div className="row about-row justify-content-center mx-0">
                             <div className="col-lg-10 col-sm-12 about-content" id='about-data' data-aos="fade-left">
-                                <h3>UI/UX Designer &amp; Web Developer.</h3>
+                                <h3>Software Engineer &amp; Web Developer.</h3>
                                 <p className="fst-italic" style={{ textAlign: 'justify' }}>
                                     Hey everyone, Gokul here, a UI/UX Designer and Web Developer from India.
                                     I am a passionate self-taught UI/UX Designer and Web Developer.
@@ -74,16 +74,17 @@ const Test = () => {
                                     <div className="col-lg-6">
                                         <ul style={{ listStyleType: 'none' }}>
                                             <li><BsChevronDoubleRight /> <strong>Degree:</strong> <span>Bachelor IT</span></li>
+                                            <li><BsChevronDoubleRight /> <strong>Availability:</strong> <span>Available to work ASAP</span></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    {/* <div className="col-lg-6">
+                                        <ul style={{ listStyleType: 'none' }}>
+                                            <li><BsChevronDoubleRight /> <strong>City:</strong> <span>Canberra, ACT</span></li>
                                             <li><BsChevronDoubleRight /> <strong>Email:</strong> <span>gokulsangamitrachoyi@gmail.com</span></li>
                                             <li><BsChevronDoubleRight /> <strong>Phone:</strong> <span>0 435 660 343</span></li>
                                         </ul>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <ul style={{ listStyleType: 'none' }}>
-                                            <li><BsChevronDoubleRight /> <strong>City:</strong> <span>Canberra, ACT</span></li>
-                                            <li><BsChevronDoubleRight /> <strong>Freelance:</strong> <span>Available</span></li>
-                                        </ul>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <p>
                                     {/* put something here */}

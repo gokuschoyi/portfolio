@@ -5,7 +5,7 @@ import Hero from './components/hero-section/hero-section.component';
 import About from './components/about/about.component';
 import Resume from './components/resume/resume.component';
 import Projects from './components/projects/projects.component';
-import Test from './components/test/test';
+import Contact from './components/contact/contact.component';
 function App() {
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -26,6 +26,7 @@ function App() {
         <About />
         <Resume />
         <Projects />
+        <Contact />
       </div>
     </>
   );

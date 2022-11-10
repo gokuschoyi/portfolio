@@ -1,0 +1,307 @@
+import React, { useEffect } from 'react'
+import './test.styles.css'
+import { Waypoint } from 'react-waypoint';
+
+
+const Test = () => {
+
+    useEffect(() => {
+        document.getElementById('bl-main').querySelectorAll('section')
+            .forEach(item => {
+                item.addEventListener('click', event => {
+                    const mainContainer = document.getElementsByClassName('bl-main')
+                    const projectOne = document.getElementsByClassName(`${item.className}`)
+                    mainContainer[0].classList.add('bl-expand-item')
+                    projectOne[0].classList.add('bl-expand', 'bl-expand-top')
+                    /* console.log('clicked', `${item.className}`) */
+                })
+            })
+    })
+
+    const closeTab = (value) => {
+        console.log(value)
+        const mainContainer = document.getElementsByClassName('bl-main')
+        const project = document.getElementsByClassName(`${value}`)
+        project[0].classList.remove('bl-expand', 'bl-expand-top')
+        mainContainer[0].classList.remove('bl-expand-item')
+    }
+
+    const animateProject = () => {
+        const project1 = document.getElementsByClassName('bl-main');
+        project1[0].classList.add('projectFinal');
+        console.log(project1[0].classList)
+    }
+
+    const remove = () => {
+        console.log('remove');
+        const project1 = document.getElementsByClassName('bl-main');
+        project1[0].classList.remove('projectFinal');
+    }
+
+    return (
+        <>
+            <div className="container-fluid new">
+                {<Waypoint
+                    onEnter={animateProject}
+                    onLeave={remove}>
+                </Waypoint>}
+                <div id="bl-main" className="bl-main projectInitial">
+
+                    <section id='project'>
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Project One</h2>
+                        </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectOne')}><strong>Go Back</strong></button>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id='project'>
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Project Two</h2>
+                        </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectTwo')}><strong>Go Back</strong></button>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id='project'>
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Project Three</h2>
+                        </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectThree')}><strong>Go Back</strong></button>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id='project'>
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Project Four</h2>
+                        </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectFour')}><strong>Go Back</strong></button>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default Test
+
+
+
+import React, { useEffect } from 'react'
+import { Waypoint } from 'react-waypoint';
+import './projects.styles.css'
+import PP from '../../assets/project_placeholder.jpg';
+
+const Projects = () => {
+    useEffect(() => {
+        const resumeContent = document.getElementsByClassName('resume-content');
+        const projectSection = document.getElementsByClassName('projects-section');
+        const height = resumeContent[0].clientHeight + 200;
+        projectSection[0].style.marginTop = `${height}px`;
+        window.addEventListener('resize', () => {
+            const height = resumeContent[0].clientHeight + 200;
+            projectSection[0].style.marginTop = `${height}px`;
+            /* console.log(height); */
+        });
+    })
+    const animateProjectOne = () => {
+        const project1 = document.getElementsByClassName('project-one');
+        project1[0].classList.add('animate-projectOne');
+    }
+    const animateProjectTwo = () => {
+        const project2 = document.getElementsByClassName('project-two');
+        project2[0].classList.add('animate-projectTwo');
+    }
+    const animateProjectThree = () => {
+        const project3 = document.getElementsByClassName('project-three');
+        project3[0].classList.add('animate-projectThree');
+    }
+    const animateProjectFour = () => {
+        const project4 = document.getElementsByClassName('project-four');
+        project4[0].classList.add('animate-projectFour');
+    }
+    const remove = () => {
+        console.log('remove');
+        const project1 = document.getElementsByClassName('project-one');
+        const project2 = document.getElementsByClassName('project-two');
+        const project3 = document.getElementsByClassName('project-three');
+        const project4 = document.getElementsByClassName('project-four');
+        project1[0].classList.remove('animate-projectOne');
+        project2[0].classList.remove('animate-projectTwo');
+        project3[0].classList.remove('animate-projectThree');
+        project4[0].classList.remove('animate-projectFour');
+    }
+    return (
+        <section id='projects' className='projects-section'>
+            <h2 className='project-title' style={{ color: 'black' }}>Projects</h2>
+            <div className='container-fluid'>
+                <Waypoint
+                    onEnter={animateProjectOne}>
+                    
+                </Waypoint>
+                <div className='row p-4 project project-one justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 1
+                            </div>
+                            <div className="card-body">
+                                <h5 className="card-title">Build Audience</h5>
+                            </div>
+                            <div className="card-footer text-muted">
+                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Waypoint
+                    onEnter={animateProjectTwo}>
+                </Waypoint>
+                <div className='row p-4 project project-two justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 2
+                            </div>
+                            <div className="card-body">
+                                <h5 className="card-title">Build Audience</h5>
+                            </div>
+                            <div className="card-footer text-muted">
+                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Waypoint
+                    onEnter={animateProjectThree}>
+                </Waypoint>
+                <div className='row p-4 project project-three justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 3
+                            </div>
+                            <div className="card-body">
+                                <h5 className="card-title">Build Audience</h5>
+                            </div>
+                            <div className="card-footer text-muted">
+                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Waypoint
+                    onEnter={animateProjectFour}>
+                </Waypoint>
+                <div className='row p-4 project project-four justify-content-center '>
+                    <div className='col-10 ps-5 pe-5'>
+                        <div className="card text-center">
+                            <div className="card-header">
+                                Project 4
+                            </div>
+                            <div className="card-body">
+                                <h5 className="card-title">Build Audience</h5>
+                            </div>
+                            <div className="card-footer text-muted">
+                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default Projects
+
+
+.projects-section {
+    margin-top: 10vh;
+    transition: all 1s ease;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 120;
+    background-image: url("../../assets/bg_new.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .project-title {
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    color: aliceblue;
+    font-size: 40px;
+  }
+  
+  
+  
+  .project {
+    opacity: 0;
+    transition: all 1s ease;
+  }
+  
+  .project-one {
+    margin-left: 350px;
+  }
+  
+  .project-two {
+    margin-right: 350px;
+  }
+  
+  .project-three {
+    margin-left: 350px;
+  }
+  .project-four {
+    margin-right: 350px;
+  }
+  
+  .animate-projectOne {
+    margin-left: 0px;
+    opacity: 1;
+    transition: all 2s ease;
+  }
+  
+  .animate-projectTwo {
+    margin-right:0px;
+    opacity: 1;
+    transition: all 2s ease;
+  }
+  
+  .animate-projectThree {
+    margin-left: 0px;
+    opacity: 1;
+    transition: all 2s ease;
+  }
+  
+  .animate-projectFour {
+    margin-right:0px;
+    opacity: 1;
+    transition: all 2s ease;
+  }
+  

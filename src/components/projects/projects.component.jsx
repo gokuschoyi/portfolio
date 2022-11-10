@@ -6,7 +6,7 @@ import PP from '../../assets/project_placeholder.jpg';
 const Projects = () => {
     useEffect(() => {
         const resumeContent = document.getElementsByClassName('resume-content');
-        const projectSection = document.getElementsByClassName('projects-section');
+        const projectSection = document.getElementsByClassName('new');
         const height = resumeContent[0].clientHeight + 200;
         projectSection[0].style.marginTop = `${height}px`;
         window.addEventListener('resize', () => {
@@ -15,112 +15,104 @@ const Projects = () => {
             /* console.log(height); */
         });
     })
-    const animateProjectOne = () => {
-        const project1 = document.getElementsByClassName('project-one');
-        project1[0].classList.add('animate-projectOne');
+    useEffect(() => {
+        document.getElementById('bl-main').querySelectorAll('section')
+            .forEach(item => {
+                item.addEventListener('click', event => {
+                    const mainContainer = document.getElementsByClassName('bl-main')
+                    const projectOne = document.getElementsByClassName(`${item.className}`)
+                    mainContainer[0].classList.add('bl-expand-item')
+                    projectOne[0].classList.add('bl-expand', 'bl-expand-top')
+                    /* console.log('clicked', `${item.className}`) */
+                })
+            })
+    })
+
+    const closeTab = (value) => {
+        console.log(value)
+        const mainContainer = document.getElementsByClassName('bl-main')
+        const project = document.getElementsByClassName(`${value}`)
+        project[0].classList.remove('bl-expand', 'bl-expand-top')
+        mainContainer[0].classList.remove('bl-expand-item')
     }
-    const animateProjectTwo = () => {
-        const project2 = document.getElementsByClassName('project-two');
-        project2[0].classList.add('animate-projectTwo');
+
+    const animateProject = () => {
+        const project1 = document.getElementsByClassName('bl-main');
+        project1[0].classList.add('projectFinal');
+        console.log(project1[0].classList)
     }
-    const animateProjectThree = () => {
-        const project3 = document.getElementsByClassName('project-three');
-        project3[0].classList.add('animate-projectThree');
-    }
-    const animateProjectFour = () => {
-        const project4 = document.getElementsByClassName('project-four');
-        project4[0].classList.add('animate-projectFour');
-    }
+
     const remove = () => {
         console.log('remove');
-        const project1 = document.getElementsByClassName('project-one');
-        const project2 = document.getElementsByClassName('project-two');
-        const project3 = document.getElementsByClassName('project-three');
-        const project4 = document.getElementsByClassName('project-four');
-        project1[0].classList.remove('animate-projectOne');
-        project2[0].classList.remove('animate-projectTwo');
-        project3[0].classList.remove('animate-projectThree');
-        project4[0].classList.remove('animate-projectFour');
+        const project1 = document.getElementsByClassName('bl-main');
+
+        project1[0].classList.remove('projectFinal');
     }
+
     return (
-        <section id='projects' className='projects-section'>
-            <h2 className='project-title' style={{ color: 'black' }}>Projects</h2>
-            <div className='container-fluid'>
+        <>
+            <div id='projects' className="container-fluid new">
                 <Waypoint
-                    onEnter={animateProjectOne}>
-                    
+                    onEnter={animateProject}>
                 </Waypoint>
-                <div className='row p-4 project project-one justify-content-center '>
-                    <div className='col-10 ps-5 pe-5'>
-                        <div className="card text-center">
-                            <div className="card-header">
-                                Project 1
-                            </div>
-                            <div className="card-body">
-                                <h5 className="card-title">Build Audience</h5>
-                            </div>
-                            <div className="card-footer text-muted">
-                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
-                            </div>
+                <div id="bl-main" className="bl-main projectInitial">
+                    <section id='project' className='projectOne' >
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Build Audience</h2>
                         </div>
-                    </div>
-                </div>
-                <Waypoint
-                    onEnter={animateProjectTwo}>
-                </Waypoint>
-                <div className='row p-4 project project-two justify-content-center '>
-                    <div className='col-10 ps-5 pe-5'>
-                        <div className="card text-center">
-                            <div className="card-header">
-                                Project 2
-                            </div>
-                            <div className="card-body">
-                                <h5 className="card-title">Build Audience</h5>
-                            </div>
-                            <div className="card-footer text-muted">
-                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
-                            </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectOne')}><strong>Go Back</strong></button>
+                            </p>
                         </div>
-                    </div>
-                </div>
-                <Waypoint
-                    onEnter={animateProjectThree}>
-                </Waypoint>
-                <div className='row p-4 project project-three justify-content-center '>
-                    <div className='col-10 ps-5 pe-5'>
-                        <div className="card text-center">
-                            <div className="card-header">
-                                Project 3
-                            </div>
-                            <div className="card-body">
-                                <h5 className="card-title">Build Audience</h5>
-                            </div>
-                            <div className="card-footer text-muted">
-                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
-                            </div>
+                    </section>
+
+                    <section id='project' className='projectTwo'>
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Industry Project</h2>
                         </div>
-                    </div>
-                </div>
-                <Waypoint
-                    onEnter={animateProjectFour}>
-                </Waypoint>
-                <div className='row p-4 project project-four justify-content-center '>
-                    <div className='col-10 ps-5 pe-5'>
-                        <div className="card text-center">
-                            <div className="card-header">
-                                Project 4
-                            </div>
-                            <div className="card-body">
-                                <h5 className="card-title">Build Audience</h5>
-                            </div>
-                            <div className="card-footer text-muted">
-                                <button className="btn btn-dark" style={{ margin: '5px' }}  ><i className="bi bi-github"></i></button>
-                            </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectTwo')}><strong>Go Back</strong></button>
+                            </p>
                         </div>
-                    </div>
+                    </section>
+
+                    <section id='project' className='projectThree'>
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Cafe Website</h2>
+                        </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectThree')}><strong>Go Back</strong></button>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id='project' className='projectFour'>
+                        <div className="bl-box">
+                            <h2 className="bl-icon bl-icon-about">Coffee Shop</h2>
+                        </div>
+                        <div className="bl-content">
+                            <h2>About this Project</h2>
+                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p>
+                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectFour')}><strong>Go Back</strong></button>
+                            </p>
+                        </div>
+                    </section>
                 </div>
+                {/* <Waypoint
+                    onLeave={remove}>
+                </Waypoint> */}
             </div>
-        </section>
+        </>
     )
 }
 

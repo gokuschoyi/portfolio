@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './contact.styles.scss'
-import { AiOutlineInstagram, AiOutlineLinkedin, AiOutlineShareAlt,AiOutlinePhone, AiOutlineMail } from 'react-icons/ai'
-import {IoLocationOutline} from 'react-icons/io5'
+import { AiOutlineInstagram, AiOutlineLinkedin, AiOutlineShareAlt, AiOutlinePhone, AiOutlineMail } from 'react-icons/ai'
+import { IoLocationOutline } from 'react-icons/io5'
 
 const Contact = () => {
     return (
@@ -20,27 +20,28 @@ const Contact = () => {
                                 </p>
                             </div>
                             <div className="info__content">
-                                <AiOutlineShareAlt className='info__icon'/>
+                                <AiOutlineShareAlt className='info__icon' />
                                 <div className="social">
-                                    <a href="https://www.instagram.com/gokulchoyi/" target="_blank" rel="noreferrer"><AiOutlineInstagram className='social__icon' style={{transform: 'rotate(-90deg)'}} /></a>
-                                    <a href="https://github.com/gokuschoyi" target="_blank" rel="noreferrer"><AiOutlineLinkedin className='social__icon' style={{transform: 'rotate(-90deg)'}}/></a>
+                                    <a href="https://www.instagram.com/gokulchoyi/" target="_blank" rel="noreferrer">
+                                        <AiOutlineInstagram className='social__icon' style={{ transform: 'rotate(-90deg)', marginRight:'120px' }} />
+                                    </a>
+                                    <a href="https://github.com/gokuschoyi" target="_blank" rel="noreferrer">
+                                        <AiOutlineLinkedin className='social__icon' style={{ transform: 'rotate(-90deg)', marginLeft:'120px' }} />
+                                    </a>
                                 </div>
                             </div>
                             <div className="info__content">
-                                <AiOutlinePhone className='info__icon'/>
+                                <AiOutlinePhone className='info__icon' />
                                 <p className="info__details">+61 435 660 343</p>
                             </div>
                             <div className="info__content">
-                                <AiOutlineMail className='info__icon'/>
+                                <AiOutlineMail className='info__icon' />
                                 <p className="info__details">gokulsangamitrachoyi@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
-
-
         </section>
     )
 }

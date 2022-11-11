@@ -62,10 +62,17 @@ const Projects = () => {
                         </div>
                         <div className="bl-content">
                             <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectOne')}><strong>Go Back</strong></button>
+                            <p className='project-description'>After the initial 3 months internship, I took the responsibility to design and develope one of TekTorch's projects : BUILDAUDIENCE.
+                                This was a huge learning experience for me as it was the first time I had to design and develop a website from scratch.
+                                I used ReactJS for the front-end. I used the Agile methodology to develop this project and Github to manage the code.
+                                I also utilised Webflow to design the initial wireframes which I then incorporated into React.
                             </p>
+                            <div className="btn-group close-button" role="group" aria-label="Basic example">
+                                <a href='https://github.com/gokuschoyi/BuildAudience.git' target='_blank' rel="noreferrer">
+                                    <button type="button" className="btn btn-dark m-2">Link</button>
+                                </a>
+                                <button type="button" onClick={event => closeTab('projectOne')} className="btn btn-dark m-2">Close</button>
+                            </div>
                         </div>
                     </section>
 
@@ -75,10 +82,13 @@ const Projects = () => {
                         </div>
                         <div className="bl-content">
                             <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectTwo')}><strong>Go Back</strong></button>
-                            </p>
+                            <p className='project-description'>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <div className="btn-group close-button" role="group" aria-label="Basic example">
+                                <a href='https://github.com/gokuschoyi/WildVetCheckinSystem.git' target='_blank' rel="noreferrer">
+                                    <button type="button" className="btn btn-dark m-2">Link</button>
+                                </a>
+                                <button type="button" onClick={event => closeTab('projectTwo')} className="btn btn-dark m-2">Close</button>
+                            </div>
                         </div>
                     </section>
 
@@ -111,7 +121,7 @@ const Projects = () => {
                 {/* <Waypoint
                     onLeave={remove}>
                 </Waypoint> */}
-            </div>
+            </div >
         </>
     )
 }

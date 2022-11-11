@@ -1,107 +1,54 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './test.styles.css'
-import { Waypoint } from 'react-waypoint';
-
+import { AiOutlineInstagram, AiOutlineLinkedin, AiOutlineShareAlt, AiOutlinePhone, AiOutlineMail } from 'react-icons/ai'
+import { IoLocationOutline } from 'react-icons/io5'
 
 const Test = () => {
-
-    useEffect(() => {
-        document.getElementById('bl-main').querySelectorAll('section')
-            .forEach(item => {
-                item.addEventListener('click', event => {
-                    const mainContainer = document.getElementsByClassName('bl-main')
-                    const projectOne = document.getElementsByClassName(`${item.className}`)
-                    mainContainer[0].classList.add('bl-expand-item')
-                    projectOne[0].classList.add('bl-expand', 'bl-expand-top')
-                    /* console.log('clicked', `${item.className}`) */
-                })
-            })
-    })
-
-    const closeTab = (value) => {
-        console.log(value)
-        const mainContainer = document.getElementsByClassName('bl-main')
-        const project = document.getElementsByClassName(`${value}`)
-        project[0].classList.remove('bl-expand', 'bl-expand-top')
-        mainContainer[0].classList.remove('bl-expand-item')
-    }
-
-    const animateProject = () => {
-        const project1 = document.getElementsByClassName('bl-main');
-        project1[0].classList.add('projectFinal');
-        console.log(project1[0].classList)
-    }
-
-    const remove = () => {
-        console.log('remove');
-        const project1 = document.getElementsByClassName('bl-main');
-        
-        project1[0].classList.remove('projectFinal');
-    }
-
     return (
-        <>
-            <div className="container-fluid new">
-                {<Waypoint
-                    onEnter={animateProject}
-                    onLeave={remove}>
-                </Waypoint>}
-                <div id="bl-main" className="bl-main projectInitial">
-
-                    <section id='project' className='projectOne' >
-                        <div className="bl-box">
-                            <h2 className="bl-icon bl-icon-about">Project One</h2>
-                        </div>
-                        <div className="bl-content">
-                            <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectOne')}><strong>Go Back</strong></button>
+        <section id='contact' className="contact-section">
+            <div className="container">
+                <div className='contact-title-container'>
+                    <h1 className="contact-title">CONTACT</h1>
+                </div>
+                <div className='row justify-content-center contact-group'>
+                    <div className='col-12 col-md-6 col-lg-3'>
+                        <div className="info-content">
+                            <IoLocationOutline className='info-icon' />
+                            <p className="info-details">
+                                Canberra <br />
+                                ACT <br />
+                                2614
                             </p>
                         </div>
-                    </section>
-
-                    <section id='project' className='projectTwo'>
-                        <div className="bl-box">
-                            <h2 className="bl-icon bl-icon-about">Project Two</h2>
+                    </div>
+                    <div className='col-12 col-md-6 col-lg-3'>
+                        <div className="info-content">
+                            <AiOutlineShareAlt className='info-icon' />
+                            <div className="social">
+                                <a href="https://www.instagram.com/gokulchoyi/" target="_blank" rel="noreferrer">
+                                    <AiOutlineInstagram className='social-icon' style={{ transform: 'rotate(-90deg)' }} />
+                                </a>
+                                <a href="https://github.com/gokuschoyi" target="_blank" rel="noreferrer">
+                                    <AiOutlineLinkedin className='social-icon' style={{ transform: 'rotate(-90deg)' }} />
+                                </a>
+                            </div>
                         </div>
-                        <div className="bl-content">
-                            <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectTwo')}><strong>Go Back</strong></button>
-                            </p>
+                    </div>
+                    <div className='col-12 col-md-6 col-lg-3'>
+                        <div className="info-content">
+                            <AiOutlinePhone className='info-icon' />
+                            <p className="info-details">+61 435 660 343</p>
                         </div>
-                    </section>
-
-                    <section id='project' className='projectThree'>
-                        <div className="bl-box">
-                            <h2 className="bl-icon bl-icon-about">Project Three</h2>
+                    </div>
+                    <div className='col-12 col-md-6 col-lg-3'>
+                        <div className="info-content">
+                            <AiOutlineMail className='info-icon' />
+                            <p className="info-details">gokulsangamitrachoyi@gmail.com</p>
                         </div>
-                        <div className="bl-content">
-                            <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectThree')}><strong>Go Back</strong></button>
-                            </p>
-                        </div>
-                    </section>
-
-                    <section id='project' className='projectFour'>
-                        <div className="bl-box">
-                            <h2 className="bl-icon bl-icon-about">Project Four</h2>
-                        </div>
-                        <div className="bl-content">
-                            <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectFour')}><strong>Go Back</strong></button>
-                            </p>
-                        </div>
-                    </section>
+                    </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 

@@ -21,11 +21,6 @@
   transition: all 1.5s ease;
 }
 
-.blurBG{
-  backdrop-filter: blur(10px);
-  
-}
-
 .bl-main {
   position: absolute;
   width: 100%;
@@ -39,32 +34,51 @@
   height: 46%;
 }
 
+section:hover{
+  cursor: pointer;
+}
+
+.project-description{
+  text-align: justify;
+}
+
+.close-button{
+  position: fixed;
+  align-items: center;
+  bottom: 10px;
+  margin-left:-70px;
+}
+
 .bl-main > section:first-child {
   top: 0;
   left: 0;
-  background-color: #f06060;
+  /* background-color: #f06060; */
   margin:1% 1% 1% 1%;
+  backdrop-filter: blur(5px);
 }
 
 .bl-main > section:nth-child(2) {
   top: 0;
   left: 50%;
-  background: #fa987d;
+  /* background: #fa987d; */
   margin:1% 1% 1% 1%;
+  backdrop-filter: blur(5px);
 }
 
 .bl-main > section:nth-child(3) {
   top: 50%;
   left: 0;
-  background: #72cca7;
+  /* background: #72cca7; */
   margin:1% 1% 1% 1%;
+  backdrop-filter: blur(5px);
 }
 
 .bl-main > section:nth-child(4) {
   top: 50%;
   left: 50%;
-  background: #10a296;
+  /* background: #10a296; */
   margin:1% 1% 1% 1%;
+  backdrop-filter: blur(5px);
 }
 
 .bl-box {

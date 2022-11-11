@@ -1,3 +1,211 @@
+<div className="container">
+    <div className="container__box">
+        <h1 className="container__title">CONTACT</h1>
+    </div>
+    <div className='row justify-content-center'>
+        <div className=' col-md-6 col-lg-4'>
+            <div className="info__content">
+                <IoLocationOutline className='info__icon' />
+                <p className="info__details">
+                    Canberra <br />
+                    ACT <br />
+                    2614
+                </p>
+            </div>
+        </div>
+        <div className=' col-md-6 col-lg-4'>
+            <div className="info__content">
+                <AiOutlineShareAlt className='info__icon' />
+                <div className="social">
+                    <a href="https://www.instagram.com/gokulchoyi/" target="_blank" rel="noreferrer"><AiOutlineInstagram className='social__icon' style={{ transform: 'rotate(-90deg)' }} /></a>
+                    <a href="https://github.com/gokuschoyi" target="_blank" rel="noreferrer"><AiOutlineLinkedin className='social__icon' style={{ transform: 'rotate(-90deg)' }} /></a>
+                </div>
+            </div>
+        </div>
+        <div className=' col-md-6 col-lg-4'>
+            <div className="info__content">
+                <AiOutlinePhone className='info__icon' />
+                <p className="info__details">+61 435 660 343</p>
+            </div>
+        </div>
+        <div className=' col-md-6 col-lg-4'>
+            <div className="info__content">
+                <AiOutlineMail className='info__icon' />
+                <p className="info__details">gokulsangamitrachoyi@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+.contact-section {
+    min-height: 100vh;
+    position: relative;
+    background-color: bisque;
+    z-index: 130;
+    background-image: url("../../assets/projects_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .contact-header {
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+    color: aliceblue;
+    font-size: 40px;
+  }
+  
+  /* contact form start */
+  
+  // Variables
+  $color-pri: #000000;
+  $color-priAcc: #49516f;
+  $color-sec: #f36262;
+  $color-secAcc: #282d3e;
+  $transition500: all 0.5s ease-in-out;
+  
+  // Mixin
+  @mixin center($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+  }
+  
+  .container {
+    height: 100vh;
+    color: $color-pri;
+    
+    @include center(column);
+  
+    &__box {
+      height: auto;
+      width: auto;
+      border-radius: 8px;
+      /* box-shadow: inset 0 0 10px $color-secAcc; */
+      position: relative;
+    }
+  
+    &__title {
+      height: 40px;
+      text-align: center;
+      margin: 20px;
+      letter-spacing: 8px;
+    }
+  }
+  
+  .info {
+    /* position: absolute; */
+    /* height: calc(100% - 150px); */
+    /* padding: 0 40px; */
+    /* width: 100%; */
+    transition: $transition500;
+  
+    &__box {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
+      /* padding: 0 40px; */
+    }
+  }
+  
+  .info {
+    &--hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+  
+    &__text {
+      margin: 40px auto;
+      height: 40px;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+  
+    &__content {
+      position: relative;
+      @include center(column);
+      width: 100%;
+      height: 200px;
+      /* border-right: 1px solid $color-secAcc; */
+      cursor: pointer;
+  
+      &:nth-child(3) {
+        border: none;
+      }
+  
+      &:hover {
+        .info__icon {
+          padding-bottom: 120px;
+          color: $color-sec;
+        }
+  
+        .info__details {
+          opacity: 1;
+        }
+  
+        .social {
+          opacity: 1;
+          pointer-events: all;
+          transform: rotate(90deg);
+        }
+  
+        &:nth-child(2) {
+          .info__icon {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  
+    &__icon {
+      font-size: 34px;
+      transition: $transition500;
+    }
+  
+    &__details {
+      position: absolute;
+      transition: $transition500;
+      opacity: 0;
+    }
+  }
+  
+  .social {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-gap: 30px;
+    justify-items: center;
+    align-items: center;
+    opacity: 0;
+    transition: $transition500;
+  
+    &__icon {
+      color: $color-pri;
+      padding: 13px;
+      font-size: 54px;
+      transform: rotate(-45deg);
+      transition: $transition500;
+  
+      &:hover {
+        color: $color-sec;
+      }
+    }
+  }
+  
+  .youtube {
+    position: absolute;
+    color: $color-pri;
+    top: 50px;
+  }
+  
+  /* contact form end */
+  
+
+
+
 import React, { useEffect } from 'react'
 import './test.styles.css'
 import { Waypoint } from 'react-waypoint';

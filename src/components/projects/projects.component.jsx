@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Waypoint } from 'react-waypoint';
 import './projects.styles.css'
-import PP from '../../assets/project_placeholder.jpg';
+/* import PP from '../../assets/project_placeholder.jpg'; */
 
 const Projects = () => {
     useEffect(() => {

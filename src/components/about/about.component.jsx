@@ -3,7 +3,7 @@ import './about.styles.css'
 import { BsChevronDoubleRight } from 'react-icons/bs'
 import AboutForeground from '../../assets/about_foreground.png';
 import AboutSky from '../../assets/about_sky.png';
-import ProfileBackground from '../../assets/profile_background.png';
+/* import ProfileBackground from '../../assets/profile_background.png'; */
 import ProfileMe from '../../assets/profile_me3.png';
 const Test = () => {
 

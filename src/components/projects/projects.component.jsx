@@ -82,7 +82,10 @@ const Projects = () => {
                         </div>
                         <div className="bl-content">
                             <h2>About this Project</h2>
-                            <p className='project-description'>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
+                            <p className='project-description'>Our Final year project focused on developing a Check-In website for a Vet Clinic based in Sydney. We followed an Agile approach
+                                with sprint meeting every 2 weeks. This was done in groups of 5, where I was the team leader. I delegated tasks to each member ensuring that all tasks were completed on time.
+                                The main requirement was to enable paperless checkin. We were also able to add other functionalities to the system such as the ability to assign doctors to each client and allowed for the updation of the status.
+                            </p>
                             <div className="btn-group close-button" role="group" aria-label="Basic example">
                                 <a href='https://github.com/gokuschoyi/WildVetCheckinSystem.git' target='_blank' rel="noreferrer">
                                     <button type="button" className="btn btn-dark m-2">Link</button>
@@ -98,10 +101,13 @@ const Projects = () => {
                         </div>
                         <div className="bl-content">
                             <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectThree')}><strong>Go Back</strong></button>
-                            </p>
+                            <p>This was a simple SPA for the cafe I worked for. </p>
+                            <div className="btn-group close-button" role="group" aria-label="Basic example">
+                                <a href='https://github.com/gokuschoyi/sakeenascafe.git' target='_blank' rel="noreferrer">
+                                    <button type="button" className="btn btn-dark m-2">Link</button>
+                                </a>
+                                <button type="button" onClick={event => closeTab('projectThree')} className="btn btn-dark m-2">Close</button>
+                            </div>
                         </div>
                     </section>
 
@@ -111,10 +117,13 @@ const Projects = () => {
                         </div>
                         <div className="bl-content">
                             <h2>About this Project</h2>
-                            <p>This responsive layout is based on an initial grid of four boxes. Once a box is clicked, it gets resized to fullscreen and the other boxes scale down and fade out. In the work section we experiment with another transition which is to show a panel by making it appear from the bottom while scaling the current one down. To see it in action, open the work section and click on one of the portfolio items and navigate through them.</p>
-                            <p>
-                                <button id='buttonClose' value='projectOne' onClick={event => closeTab('projectFour')}><strong>Go Back</strong></button>
-                            </p>
+                            <p>Another SPA for a Coffee shop that we are plannig to open In India.</p>
+                            <div className="btn-group close-button" role="group" aria-label="Basic example">
+                                <a href='https://github.com/gokuschoyi/rebeans.git' target='_blank' rel="noreferrer">
+                                    <button type="button" className="btn btn-dark m-2">Link</button>
+                                </a>
+                                <button type="button" onClick={event => closeTab('projectFour')} className="btn btn-dark m-2">Close</button>
+                            </div>
                         </div>
                     </section>
                 </div>

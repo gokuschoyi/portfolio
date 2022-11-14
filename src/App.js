@@ -18,6 +18,13 @@ function App() {
       });
     });
   })
+
+  /* window.addEventListener('scroll', function () {
+    if (window.scrollY % 100 === 0) {
+      console.log(window.scrollY)
+    }
+  }); */
+
   return (
     <>
       <div className="App">

@@ -41,22 +41,6 @@ const Resume = () => {
     });
   })
 
-  /* useEffect(() => {
-    let skilsContent = document.getElementsByClassName('skills-content');
-    if (skilsContent) {
-      var wp = new Waypoint({
-        element: skilsContent,
-        offset: '80%',
-        handler: function (direction) {
-          let progress = document.getElementsByClassName('.progress .progress-bar', true);
-          progress.forEach((el) => {
-            el.style.width = el.getAttribute('aria-valuenow') + '%'
-          });
-        }
-      })
-    }
-  }) */
-
   const skillsAnimate = () => {
     let progress = document.getElementsByClassName('progress-bar');
     for (let i = 0; i < progress.length; i++) {

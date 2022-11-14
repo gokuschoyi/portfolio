@@ -9,13 +9,16 @@ const Test = () => {
 
     useEffect(() => {
         const threshold = window.innerHeight;
-        console.log(window.innerHeight-300);
+        /* console.log({ threshold }); */
         let aim = document.getElementById('image'), room, overflow;
         let aim2 = document.getElementById('image2'), room2;
 
+        let about = document.getElementById('about');
+        var aboutHeight = about.scrollHeight
+        /* console.log({ aboutHeight }) */
+
         room = window.innerHeight;
-        overflow = 1500;
-        console.log(overflow);
+        overflow = about.scrollHeight - room;
 
         room2 = window.innerHeight;
 
@@ -23,15 +26,19 @@ const Test = () => {
         window.addEventListener('resize', setEdge);
 
         window.addEventListener('scroll', function () {
-            if (window.scrollY > threshold) {
+            if (window.scrollY > threshold && window.scrollY < overflow) {
                 var scroll = window.scrollY;
-                var rat = (scroll) / overflow;
-                var ratN = (2 - (1 / rat).toFixed(2));
-                /* console.log({ rat, ratN }) */
+                var rat = (scroll / overflow).toFixed(2);
+                var ratN = 2 - (1 / rat);
+                /* if (scroll % 100 === 0) {
+                    console.log({ scroll, overflow, rat, ratN })
+                } */
 
                 aim.style.setProperty('--epoch', ratN);
                 aim2.style.setProperty('--epoch', ratN);
-            } else {
+            }
+
+            if (window.scrollY < threshold) {
                 aim.style.setProperty('--epoch', 0);
                 aim2.style.setProperty('--epoch', 0);
             }
@@ -39,11 +46,12 @@ const Test = () => {
 
         function setEdge() {
             room = window.innerHeight;
-            overflow = 1500;
-
+            overflow = about.scrollHeight - room;
+            console.log("edge set")
             aim.style.setProperty('--maximum', room - aim.height + 'px');
             aim2.style.setProperty('--maximum', room2 - aim2.height + 'px');
         }
+
 
         /* var scroll = window.scrollY;
         var rat = (scroll) / overflow; */
@@ -75,7 +83,7 @@ const Test = () => {
                                         <ul style={{ listStyleType: 'none' }}>
                                             <li><BsChevronDoubleRight /> <strong>Degree:</strong> <span>Bachelor IT</span></li>
                                             <li><BsChevronDoubleRight /> <strong>Availability:</strong> <span>Available to work ASAP</span></li>
-                                            
+
                                         </ul>
                                     </div>
                                     {/* <div className="col-lg-6">
@@ -92,7 +100,7 @@ const Test = () => {
                             </div>
                         </div>
                         <div className="row justify-content-end mx-0">
-                            <div className="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-end" data-aos="fade-right" style={{ height: '50vh', overflow:'hidden'}} >
+                            <div className="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-end" data-aos="fade-right" style={{ height: '50vh', overflow: 'hidden' }} >
                                 <div className="profile-me">
                                     <img src={ProfileMe} className="profile-me" alt="profileMe" />
                                 </div>

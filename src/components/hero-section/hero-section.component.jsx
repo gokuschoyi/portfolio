@@ -47,7 +47,7 @@ const Hero = () => {
         window.addEventListener('scroll', () => {
             const scroll = window.scrollY;
             const scrollPosition = Math.abs(scroll / 100);
-            if (scroll % 100 === 0) { console.log({scrollPosition, scroll}) }
+            /* if (scroll % 100 === 0) { console.log({scrollPosition, scroll}) } */
             /* console.log(scroll); */
             if (threshold > scroll) {
                 tower[0].style.transform = `scale(${1 + scroll * 0.00015})`;

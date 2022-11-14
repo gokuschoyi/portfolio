@@ -121,19 +121,19 @@
 
 @media screen and (max-width: 1200px) {
   #image {
-    margin-top: -60vh;
+    margin-top: -100vh;
   }
   #image2 {
-    margin-top: 60vh;
+    margin-top: 100vh;
   }
 }
 
 @media screen and (max-width: 992px) {
   #image {
-    margin-top: -70vh;
+    margin-top: -100vh;
   }
   #image2 {
-    margin-top: 80vh;
+    margin-top: 100vh;
   }
   .about-content {
     transition: all 0.5s ease;
@@ -142,10 +142,10 @@
 
 @media screen and (max-width: 768px) {
   #image {
-    margin-top: -80vh;
+    margin-top: -100vh;
   }
   #image2 {
-    margin-top: 80vh;
+    margin-top: 100vh;
   }
 
   .about-content {

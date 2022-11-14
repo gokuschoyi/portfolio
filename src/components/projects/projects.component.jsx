@@ -101,7 +101,7 @@ const Projects = () => {
                         </div>
                         <div className="bl-content">
                             <h2>About this Project</h2>
-                            <p>This was a simple SPA for the cafe I worked for. </p>
+                            <p>This is a simple SPA for the cafe I worked for. They did not have any website and I thought why not and created this website. </p>
                             <div className="btn-group close-button" role="group" aria-label="Basic example">
                                 <a href='https://github.com/gokuschoyi/sakeenascafe.git' target='_blank' rel="noreferrer">
                                     <button type="button" className="btn btn-dark m-2">Link</button>
@@ -117,7 +117,7 @@ const Projects = () => {
                         </div>
                         <div className="bl-content">
                             <h2>About this Project</h2>
-                            <p>Another SPA for a Coffee shop that we are plannig to open In India.</p>
+                            <p>Another SPA for a Coffee shop that we are plannig to open In India. It is not complete yet. and we are planning out the different products that we can offer.</p>
                             <div className="btn-group close-button" role="group" aria-label="Basic example">
                                 <a href='https://github.com/gokuschoyi/rebeans.git' target='_blank' rel="noreferrer">
                                     <button type="button" className="btn btn-dark m-2">Link</button>

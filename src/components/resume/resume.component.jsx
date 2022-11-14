@@ -165,9 +165,9 @@ const Resume = () => {
               </div>
             </div>
             <div className="progress">
-              <span className="skill">RTK Query <i className="val">80%</i></span>
+              <span className="skill">RTK Query <i className="val">50%</i></span>
               <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+                <div className="progress-bar" role="progressbar" aria-valuenow={50} aria-valuemin={0} aria-valuemax={100} />
               </div>
             </div>
             <div className="progress">
@@ -191,12 +191,12 @@ const Resume = () => {
 
           </div>
           <div className="col-sm-12 col-md-8 col-lg-4 blur p-3" data-aos="fade-up" data-aos-delay={100}>
-            <div className="progress">
+            {/* <div className="progress">
               <span className="skill">MongoDb <i className="val">80%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
               </div>
-            </div>
+            </div> */}
             <div className="progress">
               <span className="skill">Firebase <i className="val">65%</i></span>
               <div className="progress-bar-wrap">

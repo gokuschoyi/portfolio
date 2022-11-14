@@ -23,10 +23,10 @@ const Contact = () => {
                                 <AiOutlineShareAlt className='info__icon' />
                                 <div className="social">
                                     <a href="https://www.instagram.com/gokulchoyi/" target="_blank" rel="noreferrer">
-                                        <AiOutlineInstagram className='social__icon' style={{ transform: 'rotate(-90deg)', marginRight:'120px' }} />
+                                        <AiOutlineInstagram className='social__icon' style={{ transform: 'rotate(-90deg)', marginRight: '120px' }} />
                                     </a>
                                     <a href="https://github.com/gokuschoyi" target="_blank" rel="noreferrer">
-                                        <AiOutlineLinkedin className='social__icon' style={{ transform: 'rotate(-90deg)', marginLeft:'120px' }} />
+                                        <AiOutlineLinkedin className='social__icon' style={{ transform: 'rotate(-90deg)', marginLeft: '120px' }} />
                                     </a>
                                 </div>
                             </div>
@@ -40,6 +40,10 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className='copyright'>
+                    <h5><small>&copy; Copyright 2022, Gokul S Choyi</small> </h5>
+                    <h6><small>All pictures were taken by ME</small></h6>
                 </div>
             </div>
         </section>
